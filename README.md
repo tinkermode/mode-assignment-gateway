@@ -18,6 +18,18 @@ The `sensor` and `server` services are provided by MODE and should not be modifi
 
 You can use any AI tools or resources to help with the implementation, but you must document your usage in `AI_USAGE.md`.
 
+## How to submit
+
+1. Fork this repository to your own GitHub account. Make sure to make your forked repository is **private**.
+2. Implement the gateway service in your forked repository.
+3. Once you are done, share the repository with the `tinkermode` GitHub account (read access is sufficient).
+
+## Deliverables
+
+1. Gateway implementation.
+2. Short README section describing architecture/tradeoffs.
+3. Completed `AI_USAGE.md`.
+
 ## Inputs and Contracts
 
 - Sensor protocol: `contracts/sensor_stream.md`
@@ -30,19 +42,13 @@ You can use any AI tools or resources to help with the implementation, but you m
 docker compose up --build
 ```
 
-## Deliverables
-
-1. Gateway implementation.
-2. Short README section describing architecture/tradeoffs.
-3. Completed `AI_USAGE.md`.
-
 ## Requirements
 
 - Read the following env vars and use them to connect to the sensor and ingest API server:
-    - `SENSOR_HOST` (default `sensor`)
-    - `SENSOR_PORT` (default `7000`)
-    - `INGEST_HOST` (default `server`)
-    - `INGEST_PORT` (default `8080`)
+  - `SENSOR_HOST` (default `sensor`)
+  - `SENSOR_PORT` (default `7000`)
+  - `INGEST_HOST` (default `server`)
+  - `INGEST_PORT` (default `8080`)
 - The gateway process should run by calling `docker compose up` from the candidate repo root.
 
 ## Notes
