@@ -20,9 +20,12 @@ You can use any AI tools or resources to help with the implementation, but you m
 
 ## How to submit
 
-1. Fork this repository to your own GitHub account. Make sure to make your forked repository is **private**.
+1. Clone or download this repository to your local environment.
 2. Implement the gateway service in your forked repository.
-3. Once you are done, share the repository with the `tinkermode` GitHub account (read access is sufficient).
+3. Push your local repository to your GitHub account. Make sure the repository is **private**.
+4. Invite the `tinkermode` GitHub account as a collaborator to your repository.
+
+**Do not fork this repository directly, because it will be public**
 
 ## Deliverables
 
