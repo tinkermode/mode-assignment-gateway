@@ -1,11 +1,11 @@
 services:
   sensor:
-    image: ${SENSOR_IMAGE:-ghcr.io/moderepo/gateway-takehome/sensor-simulator:v0.1.3}
+    image: ${SENSOR_IMAGE:-ghcr.io/tinkermode/gateway-takehome/sensor-simulator:v0.1.4}
     ports:
       - "17000:7000"
 
   server:
-    image: ${SERVER_IMAGE:-ghcr.io/moderepo/gateway-takehome/ingest-server:v0.1.3}
+    image: ${SERVER_IMAGE:-ghcr.io/tinkermode/gateway-takehome/ingest-server:v0.1.4}
     ports:
       - "18080:8080"
 
