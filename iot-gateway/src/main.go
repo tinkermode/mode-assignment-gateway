@@ -18,9 +18,9 @@ func getenv(key, def string) string {
 
 func main() {
 	log.SetFlags(0)
-	sensorHost := getenv("SENSOR_HOST", "sensor")
+	sensorHost := getenv("SENSOR_HOST", "sensor-tcp-simulator")
 	sensorPort := getenv("SENSOR_PORT", "7000")
-	ingestHost := getenv("INGEST_HOST", "server")
+	ingestHost := getenv("INGEST_HOST", "ingest-api-server")
 	ingestPort := getenv("INGEST_PORT", "8080")
 	ingestURL := fmt.Sprintf("http://%s:%s/ingest", ingestHost, ingestPort)
 

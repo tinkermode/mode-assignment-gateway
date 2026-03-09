@@ -4,10 +4,10 @@
 `POST /ingest`
 
 Default runtime target in this assignment:
-- `INGEST_HOST=server`
+- `INGEST_HOST=ingest-api-server`
 - `INGEST_PORT=8080`
 
-Gateway should call:
+The IoT Gateway should call:
 - `http://${INGEST_HOST}:${INGEST_PORT}/ingest`
 
 ## Request Body (JSON)
@@ -39,13 +39,13 @@ Recommended and expected in this environment:
 - `503 Service Unavailable`: transient overload/chaos condition
 
 ## Rate Limit Specification
-- Rate limiting is enforced by the server using a token-bucket model.
+- Rate limiting is enforced by the Ingest API Server using a token-bucket model.
 - The limiter applies at server level (shared capacity), not per-client.
 - Default behavior in this assignment:
   - steady-state capacity is about `10 requests/second`
   - short bursts are allowed up to about `10 requests`
   - when rate-limited, `Retry-After` is `1` second
-- When capacity is exhausted, server returns:
+- When capacity is exhausted, the Ingest API Server returns:
   - `429 Too Many Requests`
   - `Retry-After: <seconds>`
 
@@ -55,4 +55,4 @@ Recommended and expected in this environment:
 - `humid` must be a finite number in range `0..100`
 - `timestamp` must be non-empty and parseable as RFC3339/RFC3339Nano
 
-Gateway should retry transient failures with bounded backoff.
+The IoT Gateway should retry transient failures with bounded backoff.
