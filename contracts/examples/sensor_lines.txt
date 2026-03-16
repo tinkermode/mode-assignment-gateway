@@ -1,0 +1,5 @@
+seq=1001,temp=22.10,humid=49.20
+seq=1002,temp=22.00,humid=49.00
+seq=1003,temp=BAD,humid=49.10
+seq=1004,temp=22.30
+seq=1005,temp=22.50,humid=48.80

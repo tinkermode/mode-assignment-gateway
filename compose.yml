@@ -1,0 +1,20 @@
+services:
+  sensor-tcp-simulator:
+    image: ${SENSOR_IMAGE:-ghcr.io/tinkermode/gateway-takehome/sensor-simulator:v0.1.4}
+    ports:
+      - "17000:7000"
+
+  ingest-api-server:
+    image: ${SERVER_IMAGE:-ghcr.io/tinkermode/gateway-takehome/ingest-server:v0.1.4}
+    ports:
+      - "18080:8080"
+
+  iot-gateway:
+    build:
+      context: ./iot-gateway
+    environment:
+      # `sensor-tcp-simulator` and `ingest-api-server` are Compose service names on the same network.
+      SENSOR_HOST: "sensor-tcp-simulator"
+      SENSOR_PORT: "7000"
+      INGEST_HOST: "ingest-api-server"
+      INGEST_PORT: "8080"
